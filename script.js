@@ -126,3 +126,40 @@ document.write('<th class="table_header"> Total Time </th>');
 document.write('<th class="table_header"> Tasks Given </th>');
 document.write('<th class="table_header"> Tasks Finishd </th>');
 document.write('<th class="table_header"> Tasks % </th>');
+for (let task of tasks) {
+	document.write("<tr>");
+	document.write(`<td> ${task.topic}</td>`);
+	document.write(
+		`<td> ${task.startedAt.getHours()}:${task.startedAt.getMinutes()}${
+			task.startedAt.getMinutes() === 0 ? "0" : ""
+		}</td>`
+	);
+	document.write(
+		`<td> ${task.finishedAt.getHours()}:${task.finishedAt.getMinutes()}${
+			task.finishedAt.getMinutes() === 0 ? "0" : ""
+		}</td>`
+	);
+	document.write(
+		`<td class =${
+			task.totalTime < 5
+				? '"good_time"'
+				: task.totalTime < 8
+				? '"medium_time"'
+				: '"bad_time"'
+		}> ${task.totalTime}</td>`
+	);
+	document.write(`<td> ${task.tasksGiven}</td>`);
+	document.write(`<td> ${task.tasksFinished}</td>`);
+	document.write(
+		`<td class = ${
+			task.tasksPerc >= 80
+				? '"good_perc"'
+				: task.tasksPerc >= 50
+				? "medium_perc"
+				: "bad_perc"
+		}> ${task.tasksPerc}%</td>`
+	);
+	document.write("</tr>");
+}
+
+document.write("</table>");
