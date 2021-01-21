@@ -1,8 +1,8 @@
 let tasks = [
 	{
-		startedAt: new Date("2021-01-20:6:00"),
+		startedAt: new Date("2021-01-20:6:30"),
 
-		finishedAt: new Date("2021-01-20:11:00"),
+		finishedAt: new Date("2021-01-20:11:50"),
 
 		tasksGiven: 20,
 
@@ -11,7 +11,7 @@ let tasks = [
 		topic: "JavaScript",
 	},
 	{
-		startedAt: new Date("2021-01-20:14:20"),
+		startedAt: new Date("2021-01-20:14:05"),
 
 		finishedAt: new Date("2021-01-20:16:20"),
 
@@ -33,7 +33,7 @@ let tasks = [
 		topic: "Objects",
 	},
 	{
-		startedAt: new Date("2021-01-20:17:00"),
+		startedAt: new Date("2021-01-20:17:22"),
 
 		finishedAt: new Date("2021-01-20:23:40"),
 
@@ -44,9 +44,9 @@ let tasks = [
 		topic: "Music",
 	},
 	{
-		startedAt: new Date("2021-01-20:18:00"),
+		startedAt: new Date("2021-01-20:20:56"),
 
-		finishedAt: new Date("2021-01-21:14:00"),
+		finishedAt: new Date("2021-01-21:14:20"),
 
 		tasksGiven: 50,
 
@@ -79,7 +79,7 @@ let tasks = [
 	{
 		startedAt: new Date("2021-01-21:13:30"),
 
-		finishedAt: new Date("2021-01-22:12:00"),
+		finishedAt: new Date("2021-01-22:12:15"),
 
 		tasksGiven: 50,
 
@@ -88,9 +88,9 @@ let tasks = [
 		topic: "Second week final",
 	},
 	{
-		startedAt: new Date("2021-01-20:10:00"),
+		startedAt: new Date("2021-01-20:10:30"),
 
-		finishedAt: new Date("2021-01-20:19:00"),
+		finishedAt: new Date("2021-01-20:18:45"),
 
 		tasksGiven: 11,
 
@@ -154,7 +154,7 @@ for (let task of tasks) {
 				: task.totalTime / 60 < 8
 				? '"medium_time"'
 				: '"bad_time"'
-		}> ${
+		}>${
 			Math.floor(task.totalTime / 60) < 10
 				? "0" + Math.floor(task.totalTime / 60)
 				: Math.floor(task.totalTime / 60)
@@ -162,7 +162,8 @@ for (let task of tasks) {
 			task.totalTime % 60 !== 0
 				? task.totalTime % 60
 				: (task.totalTime % 60) + "0"
-		}</td>`
+		}
+</td>`
 	);
 	document.write(`<td> ${task.tasksGiven}</td>`);
 	document.write(`<td> ${task.tasksFinished}</td>`);
@@ -179,3 +180,16 @@ for (let task of tasks) {
 }
 
 document.write("</table>");
+
+function hourToString(hours, minutes) {
+	out = "";
+	if (hours < 10) {
+		out += "0";
+	}
+	out += hours + ":" + minutes;
+
+	if (minutes === 0) {
+		out += "0";
+	}
+	return out;
+}

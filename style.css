@@ -3,7 +3,7 @@
 	border-radius: 1%;
 	width: 90vw;
 	margin: auto;
-	background-color: black;
+	background-color: rgb(92, 26, 26);
 }
 .table_header {
 	border: 3px solid black;
@@ -16,8 +16,8 @@
 }
 td {
 	border: 1px solid black;
-	border-radius: 1%;
-	margin: 1px;
+	border-radius: 10%;
+	margin: 15px;
 	text-align: center;
 	font-size: 18px;
 	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -26,20 +26,20 @@ td {
 	background-color: rgba(255, 255, 255, 0.6);
 }
 .good_time {
-	background-color: aqua;
+	background-color: rgba(0, 255, 255, 0.7);
 }
 .medium_time {
-	background-color: rgb(0, 200, 200);
+	background-color: rgba(0, 180, 180, 0.7);
 }
 .bad_time {
-	background-color: rgb(0, 150, 150);
+	background-color: rgba(0, 100, 100, 0.7);
 }
 .good_perc {
-	background-color: rgb(255, 0, 255);
+	background-color: rgba(255, 0, 255, 0.7);
 }
 .medium_perc {
-	background-color: rgb(200, 0, 200);
+	background-color: rgba(180, 0, 180, 0.7);
 }
 .bad_perc {
-	background-color: rgb(150, 0, 150);
+	background-color: rgba(100, 0, 100, 0.7);
 }
