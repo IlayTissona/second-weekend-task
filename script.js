@@ -120,7 +120,7 @@ for (let task of tasks) {
 
 document.write('<table id = "table">');
 document.write('<th class="table_header"> Topic </th>');
-document.write('<th class="table_header"> Startd At </th>');
+document.write('<th class="table_header"> Started At </th>');
 document.write('<th class="table_header"> Finished At </th>');
 document.write('<th class="table_header"> Total Time </th>');
 document.write('<th class="table_header"> Tasks Given </th>');
