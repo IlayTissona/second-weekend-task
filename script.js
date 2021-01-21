@@ -130,12 +130,20 @@ for (let task of tasks) {
 	document.write("<tr>");
 	document.write(`<td> ${task.topic}</td>`);
 	document.write(
-		`<td> ${task.startedAt.getHours()}:${task.startedAt.getMinutes()}${
+		`<td> ${
+			task.startedAt.getHours() < 10
+				? "0" + task.startedAt.getHours()
+				: task.startedAt.getHours()
+		}:${task.startedAt.getMinutes()}${
 			task.startedAt.getMinutes() === 0 ? "0" : ""
 		}</td>`
 	);
 	document.write(
-		`<td> ${task.finishedAt.getHours()}:${task.finishedAt.getMinutes()}${
+		`<td> ${
+			task.finishedAt.getHours() < 10
+				? "0" + task.finishedAt.getHours()
+				: task.finishedAt.getHours()
+		}:${task.finishedAt.getMinutes()}${
 			task.finishedAt.getMinutes() === 0 ? "0" : ""
 		}</td>`
 	);
@@ -146,7 +154,11 @@ for (let task of tasks) {
 				: task.totalTime / 60 < 8
 				? '"medium_time"'
 				: '"bad_time"'
-		}> ${Math.floor(task.totalTime / 60)}:${
+		}> ${
+			Math.floor(task.totalTime / 60) < 10
+				? "0" + Math.floor(task.totalTime / 60)
+				: Math.floor(task.totalTime / 60)
+		}:${
 			task.totalTime % 60 !== 0
 				? task.totalTime % 60
 				: (task.totalTime % 60) + "0"
