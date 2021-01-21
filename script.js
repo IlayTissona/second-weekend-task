@@ -1,120 +1,128 @@
 let tasks = [
 	{
-		startedAt: new Date("2021-01-20:13:00"),
+		startedAt: new Date("2021-01-20:6:00"),
 
-		finishedAt: new Date("2021-01-20:19:00"),
+		finishedAt: new Date("2021-01-20:11:00"),
 
-		tasksGiven: 10,
+		tasksGiven: 20,
 
-		tasksFinished: 7,
-
-		topic: "JavaScript",
-	},
-	{
-		startedAt: new Date("2021-01-20:13:00"),
-
-		finishedAt: new Date("2021-01-20:19:00"),
-
-		tasksGiven: 10,
-
-		tasksFinished: 7,
+		tasksFinished: 18,
 
 		topic: "JavaScript",
 	},
 	{
-		startedAt: new Date("2021-01-20:13:00"),
+		startedAt: new Date("2021-01-20:14:20"),
 
-		finishedAt: new Date("2021-01-20:19:00"),
+		finishedAt: new Date("2021-01-20:16:20"),
 
-		tasksGiven: 10,
+		tasksGiven: 15,
 
-		tasksFinished: 7,
+		tasksFinished: 15,
 
-		topic: "JavaScript",
+		topic: "CSS",
 	},
 	{
-		startedAt: new Date("2021-01-20:13:00"),
+		startedAt: new Date("2021-01-20:12:30"),
 
-		finishedAt: new Date("2021-01-20:19:00"),
+		finishedAt: new Date("2021-01-20:16:00"),
 
-		tasksGiven: 10,
+		tasksGiven: 30,
 
-		tasksFinished: 7,
+		tasksFinished: 18,
 
-		topic: "JavaScript",
+		topic: "Objects",
 	},
 	{
-		startedAt: new Date("2021-01-20:13:00"),
+		startedAt: new Date("2021-01-20:17:00"),
 
-		finishedAt: new Date("2021-01-20:19:00"),
+		finishedAt: new Date("2021-01-20:23:40"),
 
-		tasksGiven: 10,
+		tasksGiven: 28,
 
-		tasksFinished: 7,
+		tasksFinished: 10,
 
-		topic: "JavaScript",
+		topic: "Music",
 	},
 	{
-		startedAt: new Date("2021-01-20:13:00"),
+		startedAt: new Date("2021-01-20:18:00"),
 
-		finishedAt: new Date("2021-01-20:19:00"),
+		finishedAt: new Date("2021-01-21:14:00"),
 
-		tasksGiven: 10,
+		tasksGiven: 50,
 
-		tasksFinished: 7,
+		tasksFinished: 40,
 
-		topic: "JavaScript",
+		topic: "Arrays",
 	},
 	{
-		startedAt: new Date("2021-01-20:13:00"),
+		startedAt: new Date("2021-01-20:14:25"),
 
-		finishedAt: new Date("2021-01-20:19:00"),
+		finishedAt: new Date("2021-01-20:18:00"),
 
-		tasksGiven: 10,
+		tasksGiven: 80,
 
-		tasksFinished: 7,
+		tasksFinished: 54,
 
-		topic: "JavaScript",
+		topic: "Functions",
 	},
 	{
-		startedAt: new Date("2021-01-20:13:00"),
+		startedAt: new Date("2021-01-20:11:40"),
 
-		finishedAt: new Date("2021-01-20:19:00"),
+		finishedAt: new Date("2021-01-20:19:30"),
 
-		tasksGiven: 10,
+		tasksGiven: 16,
 
-		tasksFinished: 7,
+		tasksFinished: 16,
 
-		topic: "JavaScript",
+		topic: "Food",
 	},
 	{
-		startedAt: new Date("2021-01-20:13:00"),
+		startedAt: new Date("2021-01-21:13:30"),
 
-		finishedAt: new Date("2021-01-20:19:00"),
+		finishedAt: new Date("2021-01-22:12:00"),
 
-		tasksGiven: 10,
+		tasksGiven: 50,
 
-		tasksFinished: 7,
+		tasksFinished: 10,
 
-		topic: "JavaScript",
+		topic: "Second week final",
 	},
 	{
-		startedAt: new Date("2021-01-20:13:00"),
+		startedAt: new Date("2021-01-20:10:00"),
 
 		finishedAt: new Date("2021-01-20:19:00"),
 
-		tasksGiven: 10,
+		tasksGiven: 11,
 
 		tasksFinished: 7,
 
-		topic: "JavaScript",
+		topic: "ShakShuka",
+	},
+	{
+		startedAt: new Date("2021-01-20:15:00"),
+
+		finishedAt: new Date("2021-01-20:17:30"),
+
+		tasksGiven: 8,
+
+		tasksFinished: 8,
+
+		topic: "Phone calls",
 	},
 ];
 
 for (let task of tasks) {
-	task.totalTime = (task.finishedAt - task.startedAt) / 3600000;
+	task.totalTime = Number((task.finishedAt - task.startedAt) / 60000);
 	task.tasksPerc = Math.floor(
 		(Number(task.tasksFinished) / Number(task.tasksGiven)) * 100
 	);
-	console.log(task.totalTime + " , " + task.tasksPerc);
 }
+
+document.write('<table id = "table">');
+document.write('<th class="table_header"> Topic </th>');
+document.write('<th class="table_header"> Startd At </th>');
+document.write('<th class="table_header"> Finished At </th>');
+document.write('<th class="table_header"> Total Time </th>');
+document.write('<th class="table_header"> Tasks Given </th>');
+document.write('<th class="table_header"> Tasks Finishd </th>');
+document.write('<th class="table_header"> Tasks % </th>');
