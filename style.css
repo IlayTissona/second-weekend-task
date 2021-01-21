@@ -1,0 +1,42 @@
+#table {
+	border: 3px solid black;
+	border-radius: 1%;
+	width: 90vw;
+	margin: auto;
+}
+.table_header {
+	border: 3px solid black;
+	border-radius: 10%;
+	font-size: 22px;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	height: 40px;
+	line-height: 40px;
+}
+td {
+	border: 1px solid black;
+	border-radius: 1%;
+	margin: 1px;
+	text-align: center;
+	font-size: 18px;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	height: 30px;
+	line-height: 30px;
+}
+.good_time {
+	background-color: aqua;
+}
+.medium_time {
+	background-color: rgb(0, 200, 200);
+}
+.bad_time {
+	background-color: rgb(0, 150, 150);
+}
+.good_perc {
+	background-color: rgb(255, 0, 255);
+}
+.medium_perc {
+	background-color: rgb(200, 0, 200);
+}
+.bad_perc {
+	background-color: rgb(150, 0, 150);
+}
