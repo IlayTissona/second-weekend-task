@@ -124,7 +124,7 @@ document.write('<th class="table_header"> Started At </th>');
 document.write('<th class="table_header"> Finished At </th>');
 document.write('<th class="table_header"> Total Time </th>');
 document.write('<th class="table_header"> Tasks Given </th>');
-document.write('<th class="table_header"> Tasks Finishd </th>');
+document.write('<th class="table_header"> Tasks Finished </th>');
 document.write('<th class="table_header"> Tasks % </th>');
 for (let task of tasks) {
 	document.write("<tr>");
