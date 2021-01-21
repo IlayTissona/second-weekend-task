@@ -141,12 +141,16 @@ for (let task of tasks) {
 	);
 	document.write(
 		`<td class =${
-			task.totalTime < 5
+			task.totalTime / 60 < 5
 				? '"good_time"'
-				: task.totalTime < 8
+				: task.totalTime / 60 < 8
 				? '"medium_time"'
 				: '"bad_time"'
-		}> ${task.totalTime}</td>`
+		}> ${Math.floor(task.totalTime / 60)}:${
+			task.totalTime % 60 !== 0
+				? task.totalTime % 60
+				: (task.totalTime % 60) + "0"
+		}</td>`
 	);
 	document.write(`<td> ${task.tasksGiven}</td>`);
 	document.write(`<td> ${task.tasksFinished}</td>`);
