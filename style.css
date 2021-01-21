@@ -3,6 +3,7 @@
 	border-radius: 1%;
 	width: 90vw;
 	margin: auto;
+	background-color: black;
 }
 .table_header {
 	border: 3px solid black;
@@ -11,6 +12,7 @@
 	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 	height: 40px;
 	line-height: 40px;
+	background-color: rgba(255, 255, 255, 0.8);
 }
 td {
 	border: 1px solid black;
@@ -21,6 +23,7 @@ td {
 	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 	height: 30px;
 	line-height: 30px;
+	background-color: rgba(255, 255, 255, 0.6);
 }
 .good_time {
 	background-color: aqua;
