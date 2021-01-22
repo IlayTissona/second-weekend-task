@@ -13,7 +13,7 @@ let tasks = [
 	{
 		startedAt: new Date("2021-01-20:14:15"),
 
-		finishedAt: new Date("2021-01-20:16:20"),
+		finishedAt: new Date("2021-01-20:16:40"),
 
 		tasksGiven: 15,
 
