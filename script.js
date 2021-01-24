@@ -90,7 +90,7 @@ let tasks = [
 	{
 		startedAt: new Date("2021-01-20:10:30"),
 
-		finishedAt: new Date("2021-01-20:18:45"),
+		finishedAt: new Date("2021-01-20:18:05"),
 
 		tasksGiven: 11,
 
@@ -157,33 +157,37 @@ for (let task of tasks) {
 	);
 	tableRow.append(finishedAtBox);
 
-	// document.write(
-	// 	`<td> ${
-	// 		task.finishedAt.getHours() < 10
-	// 			? "0" + task.finishedAt.getHours()
-	// 			: task.finishedAt.getHours()
-	// 	}:${task.finishedAt.getMinutes()}${
-	// 		task.finishedAt.getMinutes() === 0 ? "0" : ""
-	// 	}</td>`
-	// );
-	document.write(
-		`<td class =${
-			task.totalTime / 60 < 5
-				? '"good_time"'
-				: task.totalTime / 60 < 8
-				? '"medium_time"'
-				: '"bad_time"'
-		}>${
-			Math.floor(task.totalTime / 60) < 10
-				? "0" + Math.floor(task.totalTime / 60)
-				: Math.floor(task.totalTime / 60)
-		}:${
-			task.totalTime % 60 !== 0
-				? task.totalTime % 60
-				: (task.totalTime % 60) + "0"
-		}
-</td>`
+	let totalTimeBox = document.createElement("td");
+	totalTimeBox.innerText = hourToString(
+		Math.floor(task.totalTime / 60),
+		task.totalTime % 60
 	);
+	totalTimeBox.className =
+		task.totalTime / 60 < 5
+			? "good_time"
+			: task.totalTime / 60 < 8
+			? "medium_time"
+			: "bad_time";
+	tableRow.append(totalTimeBox);
+
+	// 	document.write(
+	// 		`<td class =${
+	// task.totalTime / 60 < 5
+	// 	? '"good_time"'
+	// 	: task.totalTime / 60 < 8
+	// 	? '"medium_time"'
+	// 	: '"bad_time"';
+	// 		}>${
+	// 			Math.floor(task.totalTime / 60) < 10
+	// 				? "0" + Math.floor(task.totalTime / 60)
+	// 				: Math.floor(task.totalTime / 60)
+	// 		}:${
+	// 			task.totalTime % 60 !== 0
+	// 				? task.totalTime % 60
+	// 				: (task.totalTime % 60) + "0"
+	// 		}
+	// </td>`
+	// 	);
 	document.write(`<td> ${task.tasksGiven}</td>`);
 	document.write(`<td> ${task.tasksFinished}</td>`);
 	document.write(
@@ -202,8 +206,6 @@ document.write("</table>");
 
 function hourToString(hours, minutes) {
 	out = "";
-	console.log(hours);
-	console.log(minutes);
 
 	if (hours < 10) {
 		out += "0";
