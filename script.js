@@ -139,18 +139,26 @@ for (let header of tableHeaders) {
 for (let task of tasks) {
 	const tableRow = document.createElement("tr");
 	table.append(tableRow);
-	let tableBox = document.createElement("td");
-	tableBox.innerText = task.topic;
-	tableRow.append(tableBox);
-	document.write(
-		`<td> ${
-			task.startedAt.getHours() < 10
-				? "0" + task.startedAt.getHours()
-				: task.startedAt.getHours()
-		}:${task.startedAt.getMinutes()}${
-			task.startedAt.getMinutes() === 0 ? "0" : ""
-		}</td>`
+	let topicBox = document.createElement("td");
+	topicBox.innerText = task.topic;
+	tableRow.append(topicBox);
+
+	let startedAtBox = document.createElement("td");
+	startedAtBox.innerText = hourToString(
+		task.startedAt.getHours(),
+		task.startedAt.getMinutes()
 	);
+	tableRow.append(startedAtBox);
+
+	// document.write(
+	// 	`<td> ${
+	// 		task.startedAt.getHours() < 10
+	// 			? "0" + task.startedAt.getHours()
+	// 			: task.startedAt.getHours()
+	// 	}:${task.startedAt.getMinutes()}${
+	// 		task.startedAt.getMinutes() === 0 ? "0" : ""
+	// 	}</td>`
+	// );
 	document.write(
 		`<td> ${
 			task.finishedAt.getHours() < 10
@@ -196,10 +204,17 @@ document.write("</table>");
 
 function hourToString(hours, minutes) {
 	out = "";
+	console.log(hours);
+	console.log(minutes);
+
 	if (hours < 10) {
 		out += "0";
 	}
-	out += hours + ":" + minutes;
+	out += hours + ":";
+	if (minutes < 10 && minutes !== 0) {
+		out += "0";
+	}
+	out += minutes;
 
 	if (minutes === 0) {
 		out += "0";
