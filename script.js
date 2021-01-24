@@ -175,7 +175,10 @@ for (let task of tasks) {
 	tasksGivenBox.innerText = task.tasksGiven;
 	tableRow.append(tasksGivenBox);
 
-	// document.write(`<td> ${task.tasksGiven}</td>`);
+	let tasksFinishedBox = document.createElement("td");
+	tasksFinishedBox.innerText = task.tasksFinished;
+	tableRow.append(tasksFinishedBox);
+
 	document.write(`<td> ${task.tasksFinished}</td>`);
 	document.write(
 		`<td class = ${
