@@ -179,20 +179,27 @@ for (let task of tasks) {
 	tasksFinishedBox.innerText = task.tasksFinished;
 	tableRow.append(tasksFinishedBox);
 
-	document.write(`<td> ${task.tasksFinished}</td>`);
-	document.write(
-		`<td class = ${
-			task.tasksPerc >= 80
-				? '"good_perc"'
-				: task.tasksPerc >= 50
-				? "medium_perc"
-				: "bad_perc"
-		}> ${task.tasksPerc}%</td>`
-	);
-	document.write("</tr>");
-}
+	let tasksPercBox = document.createElement("td");
+	tasksPercBox.innerText = task.tasksPerc;
+	tasksPercBox.className =
+		task.tasksPerc >= 80
+			? "good_perc"
+			: task.tasksPerc >= 50
+			? "medium_perc"
+			: "bad_perc";
+	tableRow.append(tasksPercBox);
 
-document.write("</table>");
+	// document.write(
+	// 	`<td class = ${
+	// 		task.tasksPerc >= 80
+	// 			? '"good_perc"'
+	// 			: task.tasksPerc >= 50
+	// 			? "medium_perc"
+	// 			: "bad_perc"
+	// 	}> ${task.tasksPerc}%</td>`
+	// );
+	// document.write("</tr>");
+}
 
 function hourToString(hours, minutes) {
 	out = "";
