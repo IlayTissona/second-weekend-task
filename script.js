@@ -136,15 +136,12 @@ for (let header of tableHeaders) {
 	tableTitle.innerText = header;
 	table.append(tableTitle);
 }
-document.write('<th class="table_header"> Started At </th>');
-document.write('<th class="table_header"> Finished At </th>');
-document.write('<th class="table_header"> Total Time </th>');
-document.write('<th class="table_header"> Tasks Given </th>');
-document.write('<th class="table_header"> Tasks Finished </th>');
-document.write('<th class="table_header"> Tasks % </th>');
 for (let task of tasks) {
-	document.write("<tr>");
-	document.write(`<td> ${task.topic}</td>`);
+	const tableRow = document.createElement("tr");
+	table.append(tableRow);
+	let tableBox = document.createElement("td");
+	tableBox.innerText = task.topic;
+	tableRow.append(tableBox);
 	document.write(
 		`<td> ${
 			task.startedAt.getHours() < 10
