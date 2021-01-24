@@ -118,8 +118,24 @@ for (let task of tasks) {
 	);
 }
 
-document.write('<table id = "table">');
-document.write('<th class="table_header"> Topic </th>');
+const table = document.createElement("table");
+table.id = "table";
+document.body.append(table);
+const tableHeaders = [
+	"topic",
+	"Started At",
+	"Finshed At",
+	"Total Time",
+	"Tasks Given",
+	"Tasks Finished",
+	"Tasks %",
+];
+for (let header of tableHeaders) {
+	let tableTitle = document.createElement("th");
+	tableTitle.className = "table_header";
+	tableTitle.innerText = header;
+	table.append(tableTitle);
+}
 document.write('<th class="table_header"> Started At </th>');
 document.write('<th class="table_header"> Finished At </th>');
 document.write('<th class="table_header"> Total Time </th>');
