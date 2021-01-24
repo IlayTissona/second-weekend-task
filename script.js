@@ -150,24 +150,22 @@ for (let task of tasks) {
 	);
 	tableRow.append(startedAtBox);
 
+	let finishedAtBox = document.createElement("td");
+	finishedAtBox.innerText = hourToString(
+		task.finishedAt.getHours(),
+		task.finishedAt.getMinutes()
+	);
+	tableRow.append(finishedAtBox);
+
 	// document.write(
 	// 	`<td> ${
-	// 		task.startedAt.getHours() < 10
-	// 			? "0" + task.startedAt.getHours()
-	// 			: task.startedAt.getHours()
-	// 	}:${task.startedAt.getMinutes()}${
-	// 		task.startedAt.getMinutes() === 0 ? "0" : ""
+	// 		task.finishedAt.getHours() < 10
+	// 			? "0" + task.finishedAt.getHours()
+	// 			: task.finishedAt.getHours()
+	// 	}:${task.finishedAt.getMinutes()}${
+	// 		task.finishedAt.getMinutes() === 0 ? "0" : ""
 	// 	}</td>`
 	// );
-	document.write(
-		`<td> ${
-			task.finishedAt.getHours() < 10
-				? "0" + task.finishedAt.getHours()
-				: task.finishedAt.getHours()
-		}:${task.finishedAt.getMinutes()}${
-			task.finishedAt.getMinutes() === 0 ? "0" : ""
-		}</td>`
-	);
 	document.write(
 		`<td class =${
 			task.totalTime / 60 < 5
