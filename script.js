@@ -139,6 +139,7 @@ for (let header of tableHeaders) {
 for (let task of tasks) {
 	const tableRow = document.createElement("tr");
 	table.append(tableRow);
+
 	let topicBox = document.createElement("td");
 	topicBox.innerText = task.topic;
 	tableRow.append(topicBox);
@@ -170,25 +171,11 @@ for (let task of tasks) {
 			: "bad_time";
 	tableRow.append(totalTimeBox);
 
-	// 	document.write(
-	// 		`<td class =${
-	// task.totalTime / 60 < 5
-	// 	? '"good_time"'
-	// 	: task.totalTime / 60 < 8
-	// 	? '"medium_time"'
-	// 	: '"bad_time"';
-	// 		}>${
-	// 			Math.floor(task.totalTime / 60) < 10
-	// 				? "0" + Math.floor(task.totalTime / 60)
-	// 				: Math.floor(task.totalTime / 60)
-	// 		}:${
-	// 			task.totalTime % 60 !== 0
-	// 				? task.totalTime % 60
-	// 				: (task.totalTime % 60) + "0"
-	// 		}
-	// </td>`
-	// 	);
-	document.write(`<td> ${task.tasksGiven}</td>`);
+	let tasksGivenBox = document.createElement("td");
+	tasksGivenBox.innerText = task.tasksGiven;
+	tableRow.append(tasksGivenBox);
+
+	// document.write(`<td> ${task.tasksGiven}</td>`);
 	document.write(`<td> ${task.tasksFinished}</td>`);
 	document.write(
 		`<td class = ${
